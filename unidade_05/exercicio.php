@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="_css/estilo.css" rel="stylesheet">
         <title>PHP com AJAX</title>
     </head>
 
@@ -9,6 +10,7 @@
         <div id="listagem"></div>
         <script src="jquery.js"></script>
         <script>
+        
 
         </script>
     </body>
