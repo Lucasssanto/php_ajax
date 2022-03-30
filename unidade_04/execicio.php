@@ -11,7 +11,7 @@
 </head>
 <body>
         <div id="listagem"></div>
-        
+
         <script src="jquery.js"></script>
         <script>
             $.ajax({
@@ -23,7 +23,8 @@
                 elemento = "<ul>";
                 $(arquivo).find('produto').each(function() {
                     var nome = $(this).find('nomeproduto').text();
-                    elemento += "<li>" + nome +"</li>";
+                    var preco = $(this).find('precounitario').text();
+                    elemento += "<li>" + nome + "-R$ " + "</li>";
                 });
                 elemento += "</ul>";
                 $('div#listagem').html(elemento);
