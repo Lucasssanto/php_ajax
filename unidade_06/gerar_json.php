@@ -1,4 +1,6 @@
 <?php
+    // configruraçoes gerais
+    header('Acess-control-Allow-origin:*');
     //abrir conexao
     $conecta = mysqli_connect("localhost","root","","andes2");
 
