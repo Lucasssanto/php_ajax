@@ -61,6 +61,35 @@
         
         <script src="jquery.js"></script>
         <script>
+            $('#formulario_transportadora').submit(function(e) {
+                e.preventDefault();
+                var formulario = $(this);
+                var retorno = inserirFomrulario(formulario)
+            });
+
+            function inserirFomrulario(dados) {
+                $.ajax({
+                    type:"POST",data:dados.serialize(),
+                    url:"inserir_transportadora.php",
+                    async:false
+                }).then(secesso,falha);
+
+                function sucesso(data) {
+                    $sucesso = $.parseJSON(data)["sucesso"];
+                    $mensagem = $.parseJSON(data)["mensagem"];
+                    $('#mensagem').show();
+
+                    if(seucesso) {
+                        $('#mensagem').html($.parseJSON(data)["mensagem"]);
+                    } else {
+                        $('#mensagem').html($.parseJSON(data)["mensagem"]);
+                    }
+                }
+
+                function falha() {
+                    console.log("erro");
+                }
+            }
         </script>
     </body>
 </html>
